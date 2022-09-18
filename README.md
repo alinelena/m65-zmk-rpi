@@ -16,11 +16,11 @@ zmk firmware for mlego
 
 
 - mlego m4 2x2
-![M4 2x2](https://i.imgur.com/OLo1Bq0.jpg)
+![M4 2x2](https://i.imgur.com/OeanRrD.jpg)
   - features seed xiao rp2040, firmware not in repo yet
     - [x] matrix
     - [x] encoders
-    - [ ] oled
+    - [x] oled
     - [ ] led indicators
     - [ ] unicode
     - [ ] rgblight, strip

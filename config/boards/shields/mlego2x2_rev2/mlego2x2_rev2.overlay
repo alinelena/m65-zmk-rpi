@@ -4,7 +4,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/led/led.h>
+//#include <dt-bindings/led/led.h>
 
 / {
    model = "mlego m4, rev2";
@@ -12,8 +12,8 @@
 
    chosen {
      zmk,kscan = &kscan;
-/*
      zephyr,display = &oled;
+/*
      zmk,led-widgets-dev = &leds_i;
      zmk,led-capslock = &led_capslock;
 */
@@ -60,8 +60,26 @@
     spi-max-frequency = <200000>;
     #gpio-cells = <2>;
     reg = <0>;
-    label = "4HC595";
+    label = "74HC595";
     ngpios = <16>;
   };
 };
 
+&i2c1 {
+  status = "okay";
+  clock-frequency = <I2C_BITRATE_STANDARD>;
+
+  oled: ssd1306@3c {
+    compatible = "solomon,ssd1306fb";
+    reg = <0x3c>;
+    label = "DISPLAY";
+    width = <0x80>;
+    height = <0x20>;
+    segment-offset = <0x0>;
+    page-offset = <0x0>;
+    display-offset = <0x0>;
+    multiplex-ratio = <0x1f>;
+    com-sequential;
+    prechargep = <0x22>;
+  };
+};

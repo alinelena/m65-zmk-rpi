@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: hardware/rp2040-support
+      revision: mlego_rp2040
       import: app/west.yml
   self:
     path: config
